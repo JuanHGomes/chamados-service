@@ -1,14 +1,9 @@
-package com.agi.entity;
+package com.agi.chamados_service.entity;
 
-import com.agi.dto.PriorityEnum;
-import com.agi.dto.StatusEnum;
-import jakarta.persistence.*;
-import org.hibernate.annotations.UpdateTimestamp;
+import com.agi.chamados_service.enumerate.PriorityEnum;
+import com.agi.chamados_service.enumerate.StatusEnum;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 public class Chamado {
@@ -22,9 +17,8 @@ public class Chamado {
     private StatusEnum status;
 
     @Enumerated(EnumType.STRING)
-    private PrioridadeEnum priority;
+    private PriorityEnum priority;
 
-    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     private Usuario user;
@@ -32,7 +26,7 @@ public class Chamado {
     private Atribuido assignedTo;
 
     public Chamado(String id, String title, String description, StatusEnum status,
-                   PrioridtyEnum priority, LocalDateTime createdAt) {
+                   PriorityEnum priority, LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.description = description;
