@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Chamado {
+public class Ticket {
 
     private String id;
     private String title;
@@ -21,12 +21,12 @@ public class Chamado {
     private String assignedToName;
     private List<Comments> comments = new ArrayList<>();
 
-    public Chamado() {
+    public Ticket() {
     }
 
-    public Chamado(String id, String title, String description, StatusEnum status,
-                   PriorityEnum priority, LocalDateTime createdAt, String userName,
-                   String userEmail, String assignedToName) {
+    public Ticket(String id, String title, String description, StatusEnum status,
+                  PriorityEnum priority, LocalDateTime createdAt, String userName,
+                  String userEmail, String assignedToName) {
         this.id = id;
         this.title = title;
         this.description = description;
