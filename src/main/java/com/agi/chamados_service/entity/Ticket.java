@@ -94,7 +94,7 @@ public class Ticket {
     }
 
     public void setAssignedTo(Assigned assigned) {
-        this.assignedTo = assignedTo;
+        this.assignedTo = assigned;
     }
 
     public List<Comments> getComments() {
