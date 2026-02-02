@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.agi'
 version = '0.0.1-SNAPSHOT'
-description = 'Chamados Producer API'
+description = 'Demo project for Spring Boot'
 
 java {
 	toolchain {
@@ -30,21 +30,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.amqp:spring-rabbit-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-}
-
-tasks.register('dependencyReport') {
-	doLast {
-		println "Dependências do projeto:"
-		configurations.runtimeClasspath.each { println it.name }
-	}
 }
