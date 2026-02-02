@@ -2,7 +2,6 @@ package com.agi.chamados_service.entity;
 
 import com.agi.chamados_service.enumerate.PriorityEnum;
 import com.agi.chamados_service.enumerate.StatusEnum;
-import org.hibernate.annotations.Comments;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,26 +15,22 @@ public class Ticket {
     private StatusEnum status;
     private PriorityEnum priority;
     private LocalDateTime createdAt;
-    private String userName;
-    private String userEmail;
-    private String assignedToName;
+    private User user;
+    private Assigned assignedTo;
     private List<Comments> comments = new ArrayList<>();
 
     public Ticket() {
     }
 
     public Ticket(String id, String title, String description, StatusEnum status,
-                  PriorityEnum priority, LocalDateTime createdAt, String userName,
-                  String userEmail, String assignedToName) {
+                  PriorityEnum priority, LocalDateTime createdAt, User user,
+                  Assigned assignedTo) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
         this.priority = priority;
         this.createdAt = createdAt;
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.assignedToName = assignedToName;
     }
 
     public String getId() {
@@ -86,28 +81,20 @@ public class Ticket {
         this.createdAt = createdAt;
     }
 
-    public String getUserName() {
-        return userName;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public Assigned getAssignedTo() {
+        return assignedTo;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getAssignedToName() {
-        return assignedToName;
-    }
-
-    public void setAssignedToName(String assignedToName) {
-        this.assignedToName = assignedToName;
+    public void setAssignedTo(Assigned assigned) {
+        this.assignedTo = assignedTo;
     }
 
     public List<Comments> getComments() {
