@@ -1,8 +1,11 @@
 package com.agi.chamados_service.dto;
 
+import com.agi.chamados_service.entity.Comments;
+import com.agi.chamados_service.entity.User;
 import com.agi.chamados_service.enumerate.StatusEnum;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class TicketEvent {
     private String id;
@@ -12,6 +15,6 @@ public class TicketEvent {
     private StatusEnum priority;
     private LocalDateTime cratedAt;
     private User user;
-    private Comments comments;
+    private List<Comments> comments;
 
 }
