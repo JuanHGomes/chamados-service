@@ -7,6 +7,8 @@ import com.agi.chamados_service.entity.Ticket;
 import com.agi.chamados_service.entity.User;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class TicketMapper {
 
@@ -37,7 +39,6 @@ public class TicketMapper {
         ticket.setDescription(request.description());
         ticket.setStatus(request.status());
         ticket.setPriority(request.priority());
-        ticket.setCreatedAt(request.createdAt());
         ticket.setUser(request.user());
         ticket.setAssignedTo(request.assignedTo());
         ticket.setComments(request.comments());
