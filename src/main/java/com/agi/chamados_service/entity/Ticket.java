@@ -2,11 +2,13 @@ package com.agi.chamados_service.entity;
 
 import com.agi.chamados_service.enumerate.PriorityEnum;
 import com.agi.chamados_service.enumerate.StatusEnum;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Document(collection = "CHAMADO")
 public class Ticket {
 
     private String id;
@@ -77,8 +79,8 @@ public class Ticket {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void criaRegistroAgora() {
+        this.createdAt = LocalDateTime.now();
     }
 
     public User getUser() {

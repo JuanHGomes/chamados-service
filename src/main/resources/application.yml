@@ -8,6 +8,10 @@ spring:
     exclude:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
+  data:
+    mongodb:
+      uri: mongodb+srv://carolanac40_db_user:12345@cluster0.co216t4.mongodb.net/chamados?retryWrites=true&w=majority
+
 logging:
   level:
     root: info
