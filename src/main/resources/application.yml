@@ -7,7 +7,19 @@ spring:
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        order-out-0:
+          destination: ticket.created
+          content-type: application/json
+          producer:
+            required-groups: ticket-group
   data:
     mongodb:
       uri: mongodb+srv://carolanac40_db_user:12345@cluster0.co216t4.mongodb.net/chamados?retryWrites=true&w=majority

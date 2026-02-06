@@ -2,6 +2,7 @@ package com.agi.chamados_service.mapper;
 
 import com.agi.chamados_service.dto.CreateTicketRequest;
 import com.agi.chamados_service.dto.CreateTicketResponse;
+import com.agi.chamados_service.dto.TicketEvent;
 import com.agi.chamados_service.entity.Assigned;
 import com.agi.chamados_service.entity.Ticket;
 import com.agi.chamados_service.entity.User;
@@ -44,5 +45,20 @@ public class TicketMapper {
         ticket.setComments(request.comments());
 
         return ticket;
+    }
+
+    public TicketEvent toEvent(Ticket ticket){
+        TicketEvent event = new TicketEvent();
+
+        event.setId(ticket.getId());
+        event.setCratedAt(ticket.getCreatedAt());
+        event.setUser(ticket.getUser());
+        event.setStatus(ticket.getStatus());
+        event.setTitle(ticket.getTitle());
+        event.setComments(ticket.getComments());
+        event.setDescription(ticket.getDescription());
+        event.setPriority(ticket.getPriority());
+
+        return event;
     }
 }
